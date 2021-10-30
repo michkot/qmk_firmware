@@ -50,8 +50,8 @@
  */
 // #define GRAVE_ESC_CTRL_OVERRIDE
 
-#define ENCODERS_PAD_A { B3, D1 }
-#define ENCODERS_PAD_B { B4, D0 }
+#define ENCODERS_PAD_A { D1, B3 }
+#define ENCODERS_PAD_B { D0, B4 }
 #define ENCODER_RESOLUTION 4
 #define TAP_CODE_DELAY 10
 
