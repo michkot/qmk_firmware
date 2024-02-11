@@ -16,9 +16,10 @@
 
 #include "basketweave_s.h"
 
-const uint16_t APP = KC_APP; // or  KC_PSCR !;
+// remappingy na lenovu!
+const uint16_t APP = KC_APP; // also KC_PSCR !;
 const uint16_t PSCR = KC_INS;
-const uint16_t INS = KC_INS; // not rly!
+const uint16_t INS = KC_RGUI; // not rly!
 
 const uint16_t L1orCL = LT(1,KC_CAPS);
 const uint16_t L1orAPP = LT(1, APP);
@@ -70,4 +71,16 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     }
     return true;
+}
+
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case L1orCL:
+        case L1orAPP:
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
 }
